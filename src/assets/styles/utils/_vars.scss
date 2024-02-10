@@ -1,0 +1,34 @@
+// COLOR VARS
+$color-primary: #b721fe;
+$color-primary_shade: #740ba5;
+$color-primary_light: #e5f6fe;
+
+$color-secondary: #ff6c00;
+$color-secondary_shade: #ff5900;
+$color-secondary_light: rgba(255, 108, 0, .5);
+
+$color-third: #bfaa3c;
+
+$color-smooth-black: #060606;
+$color-grey: #ccc;
+$color-grey_max_light: #aaa;
+
+$color-ant-grey: #d9d9d9;
+
+$page-background: #eaeaea;
+
+
+// COMMON VARS
+$border-radius-basic: 10px;
+
+$full-screen: 1200px;
+$medium-screen: 991px;
+$small-screen: 767px;
+$mobile-screen: 575px;
+
+@media (min-width: $medium-screen) {
+  :root {
+    --screen-width: calc(var(--medium-screen) - 40px);
+    --screen-real-width: calc(var(--medium-screen) - 40px);
+  }
+}

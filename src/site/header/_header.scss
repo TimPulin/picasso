@@ -1,0 +1,38 @@
+.header {
+  position: fixed;
+  top: 0;
+  padding-block: 20px;
+  width: 100%;
+  background-color: #fff;
+  border-bottom-left-radius: $border-radius-basic;
+  border-bottom-right-radius: $border-radius-basic;
+  box-shadow: 5px 5px 10px 0 $color-grey;
+
+
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    width: 100%;
+    font-size: 25px;
+    font-weight: 900;
+    text-align: center;
+  }
+}
+
+@media (max-width: $small-screen) {
+  .header {
+    padding-block: 10px;
+
+    &__title {
+      font-size: 20px;
+    }
+
+    .svg__root {
+      width: 35px;
+      height: 35px;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  padding-block: 20px;
+  width: 100%;
+  background-color: #fff;
+  border-top-left-radius: $border-radius-basic;
+  border-top-right-radius: $border-radius-basic;
+
+  box-shadow: 5px -5px 10px 0 $color-grey;
+}
+
+@media (max-width: $small-screen) {
+  .footer {
+    padding-block: 10px;
+    font-size: 14px;
+  }
+}
