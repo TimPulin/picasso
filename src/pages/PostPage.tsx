@@ -13,7 +13,7 @@ export default function PostPage() {
       <div className='author'>автор: {postData.userId}</div>
       <p className='p'>{postData.body}</p>
       <div>
-        <Link to="/"  className="button-basic">К списку постов</Link>
+        <Link to="/picasso/"  className="button-basic">К списку постов</Link>
       </div>
     </main>
   );
