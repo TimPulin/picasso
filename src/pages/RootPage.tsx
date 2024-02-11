@@ -2,8 +2,8 @@ import { Outlet } from 'react-router-dom';
 import Footer from '../site/footer/Footer';
 import Header from '../site/header/Header';
 
-export default function RootPage() {
 
+export default function RootPage() {
 
   return (
     <>
