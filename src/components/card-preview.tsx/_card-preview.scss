@@ -1,0 +1,47 @@
+.card-preview-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.card-preview {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  border-radius: $border-radius-basic;
+  background-color: #fff;
+  box-shadow: 5px 5px 10px 0 $color-grey;
+
+  &>* {
+    padding-inline: .7rem;
+  }
+
+  &__header {
+    position: relative;
+    padding-top: 0.7rem;
+    text-align: center;
+    font-size: 20px;
+  }
+
+  &__body {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &__footer {
+    padding-bottom: .7rem;
+    text-align: right;
+  }
+
+  &__number {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 16px;
+    color: $color-grey;
+  }
+}
