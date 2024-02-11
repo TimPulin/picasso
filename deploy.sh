@@ -1,4 +1,6 @@
 #!/bin/bash
+rm dist -r -f
+npm run build
 cd dist
 git init
 git remote add picasso git@github.com:TimPulin/picasso.git

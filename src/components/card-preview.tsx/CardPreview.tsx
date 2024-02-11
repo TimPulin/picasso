@@ -18,7 +18,7 @@ export default function CardPreview(props: CardPreviewPropsType) {
         {cardData.body}
       </div>
       <div className="card-preview__footer">
-        <Link to={`/post/${cardData.id}`} state={cardData} className='button-basic'>Просмотр</Link>
+        <Link to={`/picasso/post/${cardData.id}`} state={cardData} className='button-basic'>Просмотр</Link>
       </div>
 
     </article>

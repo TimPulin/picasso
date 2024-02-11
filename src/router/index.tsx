@@ -6,15 +6,15 @@ import PostPage from '../pages/PostPage';
 
 export const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/picasso/',
     element: <RootPage/>,
     children: [
       {
-        path: '/',
+        path: '/picasso/',
         element: <HomePage/>,
       },
       {
-        path: '/post/:id',
+        path: '/picasso/post/:id',
         element: <PostPage/>
       }
     ]
