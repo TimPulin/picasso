@@ -1,8 +1,10 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { postApi } from '../connect/post-api';
+import { currentPageReducer } from './slicers/current-page-title';
 
 const rootReducer = combineReducers({
   [postApi.reducerPath]:postApi.reducer,
+  currentPage: currentPageReducer,
 });
 
 export const store = configureStore({
