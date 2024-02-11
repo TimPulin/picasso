@@ -1,19 +1,24 @@
 import { Link } from 'react-router-dom';
+import { PostType } from '../../connect/server-types';
 
-export default function CardPreview() {
+type CardPreviewPropsType = {
+  cardData: PostType,
+}
+
+export default function CardPreview(props: CardPreviewPropsType) {
+  const {cardData} = props;
+
   return (
     <article className="card-preview">
-      <span className="card-preview__number">788888</span>
+      <span className="card-preview__number">{cardData.id}</span>
       <div className="card-preview__header">
-        header
+        {cardData.title}
       </div>
       <div className="card-preview__body">
-        body body body body body body body body body body body body body body body body bodybody body body body body body body
-        body body body body body body body body body body body body body body body body body body body body body body
-        body body body body body body
+        {cardData.body}
       </div>
       <div className="card-preview__footer">
-        <Link to="/" className='button-basic'>Просмотр</Link>
+        <Link to={`/post/${cardData.id}`} state={cardData} className='button-basic'>Просмотр</Link>
       </div>
 
     </article>

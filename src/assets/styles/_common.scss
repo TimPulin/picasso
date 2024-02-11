@@ -26,12 +26,26 @@ body {
 
 }
 
-
 .link {
   @include link-reset;
   display: inline-block;
   padding: 5px;
   color: $color-primary;
+}
+
+.h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+  padding-bottom: 20px;
+
+  &::first-letter {
+    text-transform: capitalize;
+  }
+}
+
+.p {
+  margin-bottom: 20px;
 }
 
 @media (max-width: $small-screen) {
