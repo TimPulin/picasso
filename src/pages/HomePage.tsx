@@ -1,27 +1,45 @@
 import { useEffect, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import CardPreview from '../components/card-preview.tsx/CardPreview';
-import { useFetchPostListQuery } from '../connect/post-api';
-import LoaderSmall from '../components/loader/LoaderSmall';
+import { useLocation } from 'react-router-dom';
 import { changeCurrentPageTitle } from '../store/slicers/current-page-title';
+
+import { useFetchPostListQuery } from '../connect/post-api';
+
+import CardPreview from '../components/card-preview.tsx/CardPreview';
+import LoaderSmall from '../components/loader/LoaderSmall';
+import { LocationState, LocationStateKey } from '../router/router-types';
 
 const loadingLimit = 5;
 
+interface LocationStateHomePage extends LocationState {
+  state: {
+    key: LocationStateKey,
+    payload: number,
+  }
+}
+
 export default function HomePage() {
   const dispatch = useDispatch();
+  const {state}:LocationStateHomePage = useLocation();
+  const {POST_ID} = LocationStateKey;
 
   const [loadingStartPosition, setLoadingStartPosition] = useState(0);
   const [startFetchDown, setStartFetchDown] =  useState(false);
   const [startFetchUp, setStartFetchUp] =  useState(false);
-
   const [isFetchIngDown, setIsFetchIngDown] =  useState(false);
+  const screenHeightRef = useRef(0);
 
   const {data, isFetching} = useFetchPostListQuery({start:loadingStartPosition, limit: loadingLimit});
-  const screenHeightRef = useRef(0);
 
   useEffect(() => {
     dispatch(changeCurrentPageTitle({title: 'Главная'}));
   }, []);
+
+  useEffect(() => {
+    if(state && state.key === POST_ID) {
+      setLoadingStartPosition(state.payload);
+    }
+  }, [state]);
 
   function onScrollPage(event: any) {
     if (event.target) {
