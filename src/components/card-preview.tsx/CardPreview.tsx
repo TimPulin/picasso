@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { PostType } from '../../connect/server-types';
+import { LocationStateKey } from '../../router/router-types';
 
 type CardPreviewPropsType = {
   cardData: PostType,
@@ -7,6 +8,7 @@ type CardPreviewPropsType = {
 
 export default function CardPreview(props: CardPreviewPropsType) {
   const {cardData} = props;
+  const {POST} = LocationStateKey;
 
   return (
     <article className="card-preview">
@@ -18,7 +20,12 @@ export default function CardPreview(props: CardPreviewPropsType) {
         {cardData.body}
       </div>
       <div className="card-preview__footer">
-        <Link to={`/picasso/post/${cardData.id}`} state={cardData} className='button-basic'>Просмотр</Link>
+        <Link
+          to={`/picasso/post/${cardData.id}`}
+          state={{key: POST, payload: cardData}}
+          className='button-basic'>
+          Просмотр
+        </Link>
       </div>
 
     </article>
